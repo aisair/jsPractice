@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assign Grade</title>
+</head>
+<body>
+    <script>
+        var grade = prompt("Grade for Assignment", "95");
+        grade = Math.ceil(grade);
+        console.log(grade);
+        switch(true){
+            case (grade < 60):
+                document.write("F");
+                break;
+            case (grade < 70):
+                document.write("D");
+                break;
+            case (grade < 80):
+                document.write("C");
+                break;
+            case (grade < 90):
+                document.write("B");
+                break;
+            case (grade < 101):
+                document.write("A");
+                break;
+            default:
+                document.write("Not a possible grade.");
+                break;
+        }
+    </script>
+</body>
+</html>

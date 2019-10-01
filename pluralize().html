@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pluralize()</title>
+</head>
+<body>
+<script>
+
+    function asmphrase(word, num){
+        if(num === 1){
+            return num + " " + word;
+        }
+        else{
+            let pluword = plur(word);
+            return num + " " + pluword;
+        }
+    }
+
+    function plur(word){
+        switch(word){
+            case("goose"):
+                return "geese";
+            case("mouse"):
+                return "mice";
+            case("deer"):
+                return "deer";
+            default:
+                return word + "s";
+        }
+    }
+
+    document.write(asmphrase("mouse", 2));
+    document.write("<br>");
+    document.write(asmphrase("rabbit", 3));
+    document.write("<br>");
+    document.write(asmphrase("deer", 5));
+    document.write("<br>");
+    document.write(asmphrase("goose", 7));
+    document.write("<br>");
+    document.write(asmphrase("bird", 1));
+
+</script>
+</body>
+</html>

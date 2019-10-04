@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsQuiz</title>
+</head>
+<body>
+<script>
+
+    function askQuestion(q, ans){
+        let ua = prompt(q).toLowerCase();
+        return ua === ans;
+    }
+
+    function printScores(q1,q2,q3){
+        let score = 0;
+        if (q1) {
+            document.write("You answered Question 1 correctly and got 5 points! <br>");
+            score+=5;
+        }
+        else{
+            document.write("You answered Question 1 incorrectly and didn't get any points.<br>");
+        }
+        if (q2) {
+            document.write("You answered Question 2 correctly and got 5 points!<br>");
+            score+=5;
+        }
+        else{
+            document.write("You answered Question 2 incorrectly and didn't get any points.<br>");
+        }
+        if (q3) {
+            document.write("You answered Question 3 correctly and got 5 points!<br>");
+            score+=5;
+        }
+        else{
+            document.write("You answered Question 3 incorrectly and didn't get any points.<br>v");
+        }
+        document.write("Your final score was " + score + " out of 15 points! Congratulations!");
+    }
+
+    function startQuiz() {
+        let q1;
+        let q2;
+        let q3;
+        if (askQuestion("What is 1 to the fourth power?", "1")){
+            q1 = true;
+        }
+        if (askQuestion("What is the cosine of pi radians?", "-1")){
+            q2 = true;
+        }
+        if (askQuestion("Are giraffes in a threatened classification?", "yes")){
+            q3 = true;
+        }
+        printScores(q1,q2,q3);
+    }
+
+</script>
+<div id="instructions">
+    <h1>Welcome to my quiz game!</h1>
+    <p>There will be 3 questions. Answer them, and your score will pop up at the end.</p>
+</div>
+<input type="button" onclick="startQuiz()" value="Are you ready?" />
+</body>
+</html>

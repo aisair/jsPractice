@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>baseProcessing()</title>
+    <style>
+        .background{
+            background: url('https://github.com/aisair/html-fc/raw/master/snowback.jpg') no-repeat;
+            background-size: 100vw 100vh;
+            position: fixed;
+            width: 100vw;
+            height: 100%;
+            top:0;
+            left:0;
+            z-index: -1;
+            filter: blur(5px);
+        }
+        body{
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
-    <p>Enter binary (base 2) number below:</p>
+    <div class="background"></div>
+    <h1 style="font-family: DINpro, sans-serif;">Base Conversion</h1>
+    <label style="font-family: sans-serif;" for="cin">Enter a binary (base 2) number: </label>
     <input type="text" id="cin">
-    <button onclick="translate()"></button>
-<script>
-    function prepBase(){
-        let binary = document.getElementById("cin");
-        binary = parseInt(binary);
-        return binary.toString();
-    }
+    <button onclick="translate()">Convert!</button>
 
-    function translate(){
-        const input = prepBase();
-        console.log(input);
-    }
-
-
-    console.log(dec);
-</script>
+    <script>
+        function prepBase(){
+            let binary = document.getElementById("cin").value;
+            binary = parseInt(binary);
+            return binary.toString();
+        }
+        function translate(){
+            const input = prepBase();
+            const length = input.length;
+            let output;
+            for (let counter = 0; counter++; i < length;){
+                let val = input.charat(i);
+                val = val * math.pow(2, length-i);
+                console.log(val);
+            }
+        }
+    </script>
 </body>
 </html>

@@ -7,16 +7,17 @@
 <body>
     <p>Enter binary (base 2) number below:</p>
     <input type="text" id="cin">
-    <button onclick="prepBase()"></button>
+    <button onclick="translate()"></button>
 <script>
     function prepBase(){
-        var bin = document.getElementById("cin");
-        var dec = parseInt(bin);
-        return bin.toString();
+        let binary = document.getElementById("cin");
+        binary = parseInt(binary);
+        return binary.toString();
     }
 
-    function test(){
-
+    function translate(){
+        const input = prepBase();
+        console.log(input);
     }
 
 

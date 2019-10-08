@@ -39,18 +39,9 @@
     }
 
     function startQuiz() {
-        let q1;
-        let q2;
-        let q3;
-        if (askQuestion("What is 1 to the fourth power?", "1")){
-            q1 = true;
-        }
-        if (askQuestion("What is the cosine of pi radians?", "-1")){
-            q2 = true;
-        }
-        if (askQuestion("Are giraffes in a threatened classification?", "yes")){
-            q3 = true;
-        }
+        const q1 = askQuestion("What is 1 to the fourth power?", "1");
+        const q2 = askQuestion("What is the cosine of pi radians?", "-1");
+        const q3 = askQuestion("Are giraffes in a threatened classification?", "yes");
         printScores(q1,q2,q3);
     }
 

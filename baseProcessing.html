@@ -30,22 +30,22 @@
     <p id="output">test</p>
 
     <script>
-        function prepBase(){
-            let binary = document.getElementById("cin").value;
-            return parseInt(binary);
-        }
         function translate(){
-            const input = prepBase();
+            const input = parseInt(document.getElementById("cin").value);
             const length = input.toString().length;
-            let output;
-            let next;
+            let output = "";
+            let next = input;
             for (let i = 0; i++; i < length){
+                console.log("the for loop ran")
                 let divisor = Math.pow(2, length + i);
-                let remainder = (input % divisor).toString();
-                next = Math.floor(input / divisor);
-                output = remainder + output;
+                let remainder = (next % divisor).toString();
+                next = Math.floor(next / divisor);
+                console.log(next);
+                console.log(remainder);
+                output = remainder.concat(output);
             }
-            document.getElementById(output).innerHTML = output.toString();
+            document.getElementById("output").innerHTML = output.toString();
+            console.log(output);
         }
     </script>
 </body>

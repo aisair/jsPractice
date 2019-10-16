@@ -17,35 +17,52 @@
         }
         body{
             color: #FFFFFF;
+            position: absolute;
+            left: 30px;
         }
     </style>
 </head>
 <body>
     <div class="background"></div>
     <h1 style="font-family: DINpro, sans-serif;">Base Conversion</h1>
-    <label style="font-family: sans-serif;" for="cin">Enter a binary (base 2) number: </label>
+    <label style="font-family: sans-serif;" for="cin">Enter a binary (base 2) or decimal (base 10) number: </label>
     <input type="text" id="cin">
-    <button onclick="translate()">Convert!</button>
-
-    <p id="output">test</p>
-
+    <button onclick="binaryToDecimal()">Convert binary to decimal</button>
+    <button onclick="decimalToBinary()">Convert decimal to binary</button>
+    <p><span id="typeafter">Result</span>: <span id="output"></span></p>
     <script>
-        function translate(){
+        function binaryToDecimal(){
+            document.getElementById("typeafter").innerHTML = "Base 10";  //set output type
             const input = parseInt(document.getElementById("cin").value);
             const length = input.toString().length;
+            let allow = true;
+            for (let i = 0; i < length; i++) {
+                if (parseInt(input.toString().charAt(i)) > 1){
+                    allow = false;
+                }
+            }
+            if (allow) {
+                let output = 0;
+                let next = input.toString().charAt(0);
+                for (let i = 0; i < length; i++) {
+                    output += next * Math.pow(2, length - (i + 1));
+                    next = input.toString().charAt(i + 1);
+                }
+                document.getElementById("output").innerHTML = output.toString();
+            }
+            else{
+                document.getElementById("output").innerHTML = "The entered number wasn't a binary number.";
+            }
+        }
+        function decimalToBinary(){
+            document.getElementById("typeafter").innerHTML = "Base 2";  //set output type
+            let next = parseInt(document.getElementById("cin").value);
             let output = "";
-            let next = input;
-            for (let i = 0; i++; i < length){
-                console.log("the for loop ran")
-                let divisor = Math.pow(2, length + i);
-                let remainder = (next % divisor).toString();
-                next = Math.floor(next / divisor);
-                console.log(next);
-                console.log(remainder);
-                output = remainder.concat(output);
+            while (next !== 0){
+                output = (next % 2).toString() + output;
+                next = Math.floor(next/2);
             }
             document.getElementById("output").innerHTML = output.toString();
-            console.log(output);
         }
     </script>
 </body>

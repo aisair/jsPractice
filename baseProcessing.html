@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>baseProcessing()</title>
+    <title>baseProcessing</title>
     <style>
         .background{
             background: url('https://github.com/aisair/html-fc/raw/master/snowback.jpg') no-repeat;
@@ -29,7 +29,7 @@
     <input type="text" id="cin">
     <button onclick="binaryToDecimal()">Convert binary to decimal</button>
     <button onclick="decimalToBinary()">Convert decimal to binary</button>
-    <p><span id="typeafter">Result</span>: <span id="output"></span></p>
+    <p style="font-family: sans-serif;"><span id="typeafter">Result</span>: <span id="output"></span></p>
     <script>
         function binaryToDecimal(){
             document.getElementById("typeafter").innerHTML = "Base 10";  //set output type

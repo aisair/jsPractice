@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Practice</title>
+    <link rel="stylesheet" type="text/css" href="globalcss.css"/>
+</head>
+<body>
+<div class="background"></div>
+<p>This is an html file where we are going to practice writing some array skills. <br></p>
+<script>
+function favoriteFoods(){
+    var foods = [];
+    for(let i = 0; i < 3; i++){
+        foods.push(prompt("What is your favorite food?"));
+    }
+    console.log(foods);
+    document.write(foods + "<br>");
+}
+function searchArray(){
+    const array = ["a", "c", "e", "d", "b"];
+    const find = prompt("Which letter would you like to find?");
+    const found = array.indexOf(find.toLowerCase());
+    if (found > -1){
+        document.write("The letter " + find + " has been found at position " + (found + 1) + " of the array.");
+    }
+    else{
+        document.write("The letter " + find + " was not found in the array.")
+    }
+}
+function searchArrayButMore(){
+    const array = ["a", "c", "e", "d", "b"];
+    const find = prompt("Which letter would you like to find?");
+    const found = [array.indexOf(find.toLowerCase()), ];
+    if (found[0] > -1){
+        while (true){
+            array.splice(t.indexOf(find), 1);
+
+        }
+        t.splice(t.indexOf('B'), 1);
+
+    }
+    if (found > -1){
+        document.write("The letter " + find + " has been found at position " + (found + 1) + " of the array.");
+    }
+    else{
+        document.write("The letter " + find + " was not found in the array.")
+    }
+}
+searchArrayButMore();
+</script>
+</body>
+</html>

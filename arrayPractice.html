@@ -29,18 +29,23 @@ function searchArray(){
     }
 }
 function searchArrayButMore(){
-    const array = ["a", "c", "e", "d", "b"];
-    const find = prompt("Which letter would you like to find?");
-    const found = [array.indexOf(find.toLowerCase()), ];
-    if (found[0] > -1){
-        while (true){
-            array.splice(t.indexOf(find), 1);
-
+    let array = ["a", "c", "a", "d", "b"];
+    console.log(array);
+    const find = prompt("Which letter would you like to find?").toString();
+    console.log(find);
+    let found = [];
+    do {
+        if (array.indexOf(find.toLowerCase()) > -1) {
+            found.push((array.indexOf(find.toLowerCase())) + 1);
         }
-        t.splice(t.indexOf('B'), 1);
-
-    }
-    if (found > -1){
+        console.log(found);
+        if (found[0] > -1){
+            array.splice(array.indexOf(find), 1);
+        }
+        console.log(array);
+        console.log(found[found.length - 1] > -1);
+    } while (found[found.length] > -1);
+    if (found[0] > -1){
         document.write("The letter " + find + " has been found at position " + (found + 1) + " of the array.");
     }
     else{
